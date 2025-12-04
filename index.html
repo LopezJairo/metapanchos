@@ -220,6 +220,12 @@
                 <span class="text">Carta de Promos</span>
                 <span class="badge">VER</span>
             </button>
+            
+            <button onclick="openPDF('menu3')" class="link-button pdf">
+                <span class="icon">🍔</span>
+                <span class="text">Hamburguesas Smash</span>
+                <span class="badge">VER</span>
+            </button>
         </div>
 
         <div class="menu-section">
@@ -255,12 +261,26 @@
     <div id="modal-menu2" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Promos</h3>
+                <h3>🎁 Carta de Promos</h3>
                 <button onclick="closeModal('menu2')" class="close-btn">×</button>
             </div>
             <iframe src="./Promos.pdf" class="pdf-viewer"></iframe>
             <div class="download-link">
                 <a href="./Promos.pdf" download>⬇️ Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Menu 3 -->
+    <div id="modal-menu3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🍔 Hamburguesas Smash</h3>
+                <button onclick="closeModal('menu3')" class="close-btn">×</button>
+            </div>
+            <iframe src="./Menu Hamburguesas.pdf" class="pdf-viewer"></iframe>
+            <div class="download-link">
+                <a href="./Menu Hamburguesas.pdf" download>⬇️ Descargar PDF</a>
             </div>
         </div>
     </div>
