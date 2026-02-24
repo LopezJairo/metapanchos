@@ -10,16 +10,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             min-height: 100vh;
             padding: 20px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        
+
         .container {
             background: white;
             border-radius: 20px;
@@ -28,31 +26,28 @@
             margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 30px;
         }
-        
+
         .header h1 {
             color: #333;
             font-size: 32px;
             margin-bottom: 5px;
             font-weight: 600;
-            letter-spacing: -0.5px;
         }
-        
+
         .header p {
             color: #666;
             font-size: 17px;
-            font-weight: 400;
-            letter-spacing: -0.2px;
         }
-        
+
         .menu-section {
             margin-bottom: 25px;
         }
-        
+
         .section-title {
             color: #00d4ff;
             font-size: 20px;
@@ -60,9 +55,8 @@
             margin-bottom: 15px;
             padding-bottom: 8px;
             border-bottom: 2px solid #00d4ff;
-            letter-spacing: -0.3px;
         }
-        
+
         .link-button {
             display: flex;
             align-items: center;
@@ -73,50 +67,47 @@
             background: #f8f9fa;
             border: 2px solid #e9ecef;
             border-radius: 12px;
-            cursor: pointer;
             text-decoration: none;
             color: #333;
             transition: all 0.3s ease;
             font-size: 17px;
             font-weight: 500;
-            letter-spacing: -0.2px;
         }
-        
+
         .link-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,212,255,0.3);
             border-color: #00d4ff;
         }
-        
+
         .link-button.whatsapp {
             background: #25D366;
             color: white;
             border-color: #25D366;
         }
-        
+
         .link-button.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
             color: white;
             border: none;
         }
-        
+
         .link-button.pdf {
             background: #fff;
             border-color: #00d4ff;
             color: #00d4ff;
-            font-weight: 500;
         }
-        
+
         .icon {
             font-size: 24px;
             min-width: 24px;
         }
-        
+
         .text {
             flex: 1;
             text-align: left;
         }
-        
+
         .badge {
             background: #00d4ff;
             color: #000;
@@ -124,8 +115,9 @@
             border-radius: 12px;
             font-size: 12px;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
+
+        /* Modal solo para Hamburguesas */
 
         .modal {
             display: none;
@@ -164,13 +156,6 @@
             align-items: center;
         }
 
-        .modal-header h3 {
-            color: #333;
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-        }
-
         .close-btn {
             background: #00d4ff;
             color: #000;
@@ -180,15 +165,6 @@
             border-radius: 50%;
             cursor: pointer;
             font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .close-btn:hover {
-            background: #00a8cc;
-            transform: rotate(90deg);
         }
 
         .pdf-viewer {
@@ -196,127 +172,78 @@
             width: 100%;
             border: none;
         }
-
-        .download-link {
-            padding: 15px 20px;
-            background: #f8f9fa;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-
-        .download-link a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: -0.2px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🍽️ Menú Digital</h1>
-            <p>Meta Panchos 🌭</p>
-        </div>
-        
-        <div class="menu-section">
-            <div class="section-title">📋 Nuestro Menú</div>
-            
-            <button onclick="openPDF('menu1')" class="link-button pdf">
-                <span class="icon">🍕</span>
-                <span class="text">Menú Principal</span>
-                <span class="badge">VER</span>
-            </button>
-            
-            <button onclick="openPDF('menu2')" class="link-button pdf">
-                <span class="icon">🎁</span>
-                <span class="text">Carta de Promos</span>
-                <span class="badge">VER</span>
-            </button>
-            
-            <button onclick="openPDF('menu3')" class="link-button pdf">
-                <span class="icon">🍔</span>
-                <span class="text">Hamburguesas Smash</span>
-                <span class="badge">VER</span>
-            </button>
-        </div>
 
-        <div class="menu-section">
-            <div class="section-title">💬 Contactos</div>
-            
-            <a href="https://wa.me/5492615174897" class="link-button whatsapp" target="_blank">
-                <span class="icon">📱</span>
-                <span class="text">Hacer Pedido por WhatsApp</span>
-            </a>
-            
-            <a href="https://www.instagram.com/meta.panchos?igsh=MWIzOGtsZ3g0ZHduaA==" class="link-button instagram" target="_blank">
-                <span class="icon">📸</span>
-                <span class="text">Síguenos en Instagram</span>
-            </a>
-        </div>
+<div class="container">
+    <div class="header">
+        <h1>🍽️ Menú Digital</h1>
+        <p>Meta Panchos 🌭</p>
     </div>
 
-    <!-- Modal para Menu 1 -->
-    <div id="modal-menu1" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>📋 Menú Principal</h3>
-                <button onclick="closeModal('menu1')" class="close-btn">×</button>
-            </div>
-            <iframe src="./menu.pdf" class="pdf-viewer"></iframe>
-            <div class="download-link">
-                <a href="./menu.pdf" download>⬇️ Descargar PDF</a>
-            </div>
-        </div>
+    <div class="menu-section">
+        <div class="section-title">📋 Nuestro Menú</div>
+
+        <!-- MENU JPEG -->
+        <a href="./menu.jpeg" target="_blank" class="link-button pdf">
+            <span class="icon">🍕</span>
+            <span class="text">Menú Principal</span>
+            <span class="badge">VER</span>
+        </a>
+
+        <!-- PROMOS JPEG -->
+        <a href="./promos.jpeg" target="_blank" class="link-button pdf">
+            <span class="icon">🎁</span>
+            <span class="text">Carta de Promos</span>
+            <span class="badge">VER</span>
+        </a>
+
+        <!-- HAMBURGUESAS PDF (MODAL) -->
+        <button onclick="openPDF('menu3')" class="link-button pdf">
+            <span class="icon">🍔</span>
+            <span class="text">Hamburguesas Smash</span>
+            <span class="badge">VER</span>
+        </button>
     </div>
 
-    <!-- Modal para Menu 2 -->
-    <div id="modal-menu2" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>🎁 Carta de Promos</h3>
-                <button onclick="closeModal('menu2')" class="close-btn">×</button>
-            </div>
-            <iframe src="./promos.pdf" class="pdf-viewer"></iframe>
-            <div class="download-link">
-                <a href="./promos.pdf" download>⬇️ Descargar PDF</a>
-            </div>
-        </div>
+    <div class="menu-section">
+        <div class="section-title">💬 Contactos</div>
+
+        <a href="https://wa.me/5492615174897" class="link-button whatsapp" target="_blank">
+            <span class="icon">📱</span>
+            <span class="text">Hacer Pedido por WhatsApp</span>
+        </a>
+
+        <a href="https://www.instagram.com/meta.panchos" class="link-button instagram" target="_blank">
+            <span class="icon">📸</span>
+            <span class="text">Síguenos en Instagram</span>
+        </a>
     </div>
+</div>
 
-    <!-- Modal para Menu 3 -->
-    <div id="modal-menu3" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>🍔 Hamburguesas Smash</h3>
-                <button onclick="closeModal('menu3')" class="close-btn">×</button>
-            </div>
-            <iframe src="./Menu Hamburguesas.pdf" class="pdf-viewer"></iframe>
-            <div class="download-link">
-                <a href="./Menu Hamburguesas.pdf" download>⬇️ Descargar PDF</a>
-            </div>
+<!-- Modal Hamburguesas -->
+<div id="modal-menu3" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>🍔 Hamburguesas Smash</h3>
+            <button onclick="closeModal('menu3')" class="close-btn">×</button>
         </div>
+        <iframe src="./Menu Hamburguesas.pdf" class="pdf-viewer"></iframe>
     </div>
+</div>
 
-    <script>
-        function openPDF(menuId) {
-            document.getElementById('modal-' + menuId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+<script>
+function openPDF(menuId) {
+    document.getElementById('modal-' + menuId).classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-        function closeModal(menuId) {
-            document.getElementById('modal-' + menuId).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+function closeModal(menuId) {
+    document.getElementById('modal-' + menuId).classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+</script>
 
-        // Cerrar modal al hacer clic fuera
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal(this.id.replace('modal-', ''));
-                }
-            });
-        });
-    </script>
 </body>
 </html>
